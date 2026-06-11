@@ -2,114 +2,114 @@
    2026 FIFA World Cup - 交互脚本
    ============================================ */
 
-// ====== 小组赛数据 ======
+// ====== 小组赛数据（FIFA官方分组） ======
 const GROUPS = [
     {
         name: 'A', label: 'A 组',
         teams: [
             { flag: '🇲🇽', name: '墨西哥 (东道主)', rank: 'FIFA 14' },
-            { flag: '🇳🇱', name: '荷兰', rank: 'FIFA 7' },
-            { flag: '🇸🇳', name: '塞内加尔', rank: 'FIFA 17' },
-            { flag: '🇦🇪', name: '阿联酋', rank: 'FIFA 67' },
+            { flag: '🇿🇦', name: '南非', rank: 'FIFA 58' },
+            { flag: '🇰🇷', name: '韩国', rank: 'FIFA 22' },
+            { flag: '🇨🇿', name: '捷克', rank: 'FIFA 38' },
         ]
     },
     {
         name: 'B', label: 'B 组',
         teams: [
             { flag: '🇨🇦', name: '加拿大 (东道主)', rank: 'FIFA 49' },
-            { flag: '🇩🇪', name: '德国', rank: 'FIFA 10' },
-            { flag: '🇯🇵', name: '日本', rank: 'FIFA 15' },
-            { flag: '🇲🇦', name: '摩洛哥', rank: 'FIFA 12' },
+            { flag: '🇧🇦', name: '波黑', rank: 'FIFA 42' },
+            { flag: '🇶🇦', name: '卡塔尔', rank: 'FIFA 43' },
+            { flag: '🇨🇭', name: '瑞士', rank: 'FIFA 21' },
         ]
     },
     {
         name: 'C', label: 'C 组',
         teams: [
-            { flag: '🇦🇷', name: '阿根廷 (卫冕冠军)', rank: 'FIFA 1' },
-            { flag: '🇵🇹', name: '葡萄牙', rank: 'FIFA 5' },
-            { flag: '🇪🇬', name: '埃及', rank: 'FIFA 33' },
-            { flag: '🇯🇲', name: '牙买加', rank: 'FIFA 61' },
+            { flag: '🇧🇷', name: '巴西', rank: 'FIFA 2' },
+            { flag: '🇲🇦', name: '摩洛哥', rank: 'FIFA 12' },
+            { flag: '🇭🇹', name: '海地', rank: 'FIFA 88' },
+            { flag: '🏴󠁧󠁢󠁳󠁣󠁴󠁿', name: '苏格兰', rank: 'FIFA 36' },
         ]
     },
     {
         name: 'D', label: 'D 组',
         teams: [
             { flag: '🇺🇸', name: '美国 (东道主)', rank: 'FIFA 20' },
-            { flag: '🇧🇷', name: '巴西', rank: 'FIFA 2' },
-            { flag: '🇰🇷', name: '韩国', rank: 'FIFA 22' },
-            { flag: '🇳🇬', name: '尼日利亚', rank: 'FIFA 30' },
+            { flag: '🇵🇾', name: '巴拉圭', rank: 'FIFA 50' },
+            { flag: '🇦🇺', name: '澳大利亚', rank: 'FIFA 24' },
+            { flag: '🇹🇷', name: '土耳其', rank: 'FIFA 35' },
         ]
     },
     {
         name: 'E', label: 'E 组',
         teams: [
-            { flag: '🇫🇷', name: '法国', rank: 'FIFA 3' },
-            { flag: '🇪🇸', name: '西班牙', rank: 'FIFA 4' },
-            { flag: '🇦🇺', name: '澳大利亚', rank: 'FIFA 24' },
-            { flag: '🇨🇷', name: '哥斯达黎加', rank: 'FIFA 52' },
+            { flag: '🇩🇪', name: '德国', rank: 'FIFA 10' },
+            { flag: '🇨🇼', name: '库拉索', rank: 'FIFA 90' },
+            { flag: '🇨🇮', name: '科特迪瓦', rank: 'FIFA 40' },
+            { flag: '🇪🇨', name: '厄瓜多尔', rank: 'FIFA 25' },
         ]
     },
     {
         name: 'F', label: 'F 组',
         teams: [
-            { flag: '🏴󠁧󠁢󠁥󠁮󠁧󠁿', name: '英格兰', rank: 'FIFA 6' },
-            { flag: '🇮🇹', name: '意大利', rank: 'FIFA 9' },
-            { flag: '🇨🇴', name: '哥伦比亚', rank: 'FIFA 11' },
-            { flag: '🇶🇦', name: '卡塔尔', rank: 'FIFA 43' },
+            { flag: '🇳🇱', name: '荷兰', rank: 'FIFA 7' },
+            { flag: '🇯🇵', name: '日本', rank: 'FIFA 15' },
+            { flag: '🇸🇪', name: '瑞典', rank: 'FIFA 26' },
+            { flag: '🇹🇳', name: '突尼斯', rank: 'FIFA 37' },
         ]
     },
     {
         name: 'G', label: 'G 组',
         teams: [
             { flag: '🇧🇪', name: '比利时', rank: 'FIFA 8' },
-            { flag: '🇺🇾', name: '乌拉圭', rank: 'FIFA 13' },
-            { flag: '🇭🇷', name: '克罗地亚', rank: 'FIFA 16' },
+            { flag: '🇪🇬', name: '埃及', rank: 'FIFA 33' },
             { flag: '🇮🇷', name: '伊朗', rank: 'FIFA 19' },
+            { flag: '🇳🇿', name: '新西兰', rank: 'FIFA 89' },
         ]
     },
     {
         name: 'H', label: 'H 组',
         teams: [
-            { flag: '🇩🇰', name: '丹麦', rank: 'FIFA 18' },
-            { flag: '🇨🇱', name: '智利', rank: 'FIFA 31' },
-            { flag: '🇵🇱', name: '波兰', rank: 'FIFA 27' },
-            { flag: '🇿🇦', name: '南非', rank: 'FIFA 58' },
+            { flag: '🇪🇸', name: '西班牙', rank: 'FIFA 4' },
+            { flag: '🇨🇻', name: '佛得角', rank: 'FIFA 65' },
+            { flag: '🇸🇦', name: '沙特阿拉伯', rank: 'FIFA 53' },
+            { flag: '🇺🇾', name: '乌拉圭', rank: 'FIFA 13' },
         ]
     },
     {
         name: 'I', label: 'I 组',
         teams: [
+            { flag: '🇫🇷', name: '法国', rank: 'FIFA 3' },
+            { flag: '🇸🇳', name: '塞内加尔', rank: 'FIFA 17' },
+            { flag: '🇮🇶', name: '伊拉克', rank: 'FIFA 64' },
             { flag: '🇳🇴', name: '挪威', rank: 'FIFA 45' },
-            { flag: '🇪🇨', name: '厄瓜多尔', rank: 'FIFA 25' },
-            { flag: '🇨🇲', name: '喀麦隆', rank: 'FIFA 40' },
-            { flag: '🇸🇦', name: '沙特阿拉伯', rank: 'FIFA 53' },
         ]
     },
     {
         name: 'J', label: 'J 组',
         teams: [
-            { flag: '🇷🇸', name: '塞尔维亚', rank: 'FIFA 32' },
-            { flag: '🇵🇪', name: '秘鲁', rank: 'FIFA 28' },
-            { flag: '🇹🇳', name: '突尼斯', rank: 'FIFA 36' },
-            { flag: '🇵🇦', name: '巴拿马', rank: 'FIFA 70' },
+            { flag: '🇦🇷', name: '阿根廷', rank: 'FIFA 1' },
+            { flag: '🇩🇿', name: '阿尔及利亚', rank: 'FIFA 34' },
+            { flag: '🇦🇹', name: '奥地利', rank: 'FIFA 23' },
+            { flag: '🇯🇴', name: '约旦', rank: 'FIFA 55' },
         ]
     },
     {
         name: 'K', label: 'K 组',
         teams: [
-            { flag: '🇸🇪', name: '瑞典', rank: 'FIFA 26' },
-            { flag: '🇨🇭', name: '瑞士', rank: 'FIFA 21' },
-            { flag: '🇬🇭', name: '加纳', rank: 'FIFA 47' },
-            { flag: '🇳🇿', name: '新西兰', rank: 'FIFA 89' },
+            { flag: '🇵🇹', name: '葡萄牙', rank: 'FIFA 5' },
+            { flag: '🇨🇩', name: '刚果(金)', rank: 'FIFA 64' },
+            { flag: '🇺🇿', name: '乌兹别克斯坦', rank: 'FIFA 61' },
+            { flag: '🇨🇴', name: '哥伦比亚', rank: 'FIFA 11' },
         ]
     },
     {
         name: 'L', label: 'L 组',
         teams: [
-            { flag: '🇦🇹', name: '奥地利', rank: 'FIFA 23' },
-            { flag: '🇹🇷', name: '土耳其', rank: 'FIFA 35' },
-            { flag: '🇩🇿', name: '阿尔及利亚', rank: 'FIFA 38' },
-            { flag: '🇨🇳', name: '中国', rank: 'FIFA 78' },
+            { flag: '🏴󠁧󠁢󠁥󠁮󠁧󠁿', name: '英格兰', rank: 'FIFA 6' },
+            { flag: '🇭🇷', name: '克罗地亚', rank: 'FIFA 16' },
+            { flag: '🇬🇭', name: '加纳', rank: 'FIFA 47' },
+            { flag: '🇵🇦', name: '巴拿马', rank: 'FIFA 70' },
         ]
     },
 ];
@@ -117,434 +117,384 @@ const GROUPS = [
 // ====== 时区换算表 ======
 // 美国东部 EDT (UTC-4): 本地+12h=北京 | 美国中部 CDT (UTC-5): +13h
 // 美国太平洋 PDT (UTC-7): +15h | 墨西哥 CST (UTC-6): +14h
-// 所有比赛本地时间→北京时间均跨日(+1天)
+// 北京时间主要时段: 03:00 揭幕战/决赛, 06:00-12:00 大量比赛
 
-// ====== 完整赛程 (时间均为北京时间，可点击查看详情) ======
+// ====== 完整赛程 (北京时间，数据来源：FIFA官方 + CCTV5节目表) ======
 const MATCHES = [
-    // ════ 6月12日 (周四) 北京时间 ════
+    // ════ 6月12日 (周五) 揭幕战 ════
     {
-        id: 1, dateBJ: '6月12日 (周四)', timeBJ: '02:00', group: 'A组', stage: '小组赛 第1轮',
-        home: { flag: '🇲🇽', name: '墨西哥' }, away: { flag: '🇳🇱', name: '荷兰' },
+        id: 1, dateBJ: '6月12日 (周五)', timeBJ: '03:00', group: 'A组', stage: '小组赛 第1轮',
+        home: { flag: '🇲🇽', name: '墨西哥' }, away: { flag: '🇿🇦', name: '南非' },
         stadium: '阿兹特克体育场', city: '墨西哥城', capacity: '87,523',
-        tz: 'UTC-6', timeLocal: '6/11 12:00', status: 'live', note: '🔥 揭幕战'
+        tz: 'UTC-6', timeLocal: '6/11 13:00', status: 'live', note: '🔥 揭幕战！CCTV5直播'
     },
     {
-        id: 2, dateBJ: '6月12日 (周四)', timeBJ: '06:00', group: 'A组', stage: '小组赛 第1轮',
-        home: { flag: '🇸🇳', name: '塞内加尔' }, away: { flag: '🇦🇪', name: '阿联酋' },
+        id: 2, dateBJ: '6月12日 (周五)', timeBJ: '10:00', group: 'A组', stage: '小组赛 第1轮',
+        home: { flag: '🇰🇷', name: '韩国' }, away: { flag: '🇨🇿', name: '捷克' },
         stadium: 'BBVA体育场', city: '蒙特雷', capacity: '53,500',
-        tz: 'UTC-6', timeLocal: '6/11 16:00', status: 'live', note: ''
-    },
-    {
-        id: 3, dateBJ: '6月12日 (周四)', timeBJ: '08:00', group: 'B组', stage: '小组赛 第1轮',
-        home: { flag: '🇨🇦', name: '加拿大' }, away: { flag: '🇲🇦', name: '摩洛哥' },
-        stadium: 'BMO体育场', city: '多伦多', capacity: '45,500',
-        tz: 'UTC-4', timeLocal: '6/11 20:00', status: 'live', note: '🇨🇦 东道主首秀'
+        tz: 'UTC-6', timeLocal: '6/11 20:00', status: 'live', note: '孙兴慜领衔'
     },
 
-    // ════ 6月13日 (周五) 北京时间 ════
+    // ════ 6月13日 (周六) ════
     {
-        id: 4, dateBJ: '6月13日 (周五)', timeBJ: '00:00', group: 'C组', stage: '小组赛 第1轮',
-        home: { flag: '🇦🇷', name: '阿根廷' }, away: { flag: '🇪🇬', name: '埃及' },
-        stadium: '大都会人寿体育场', city: '新泽西', capacity: '82,500',
-        tz: 'UTC-4', timeLocal: '6/12 12:00', status: 'live', note: '⭐ 卫冕冠军首秀'
+        id: 3, dateBJ: '6月13日 (周六)', timeBJ: '04:00', group: 'B组', stage: '小组赛 第1轮',
+        home: { flag: '🇨🇦', name: '加拿大' }, away: { flag: '🇧🇦', name: '波黑' },
+        stadium: 'BMO体育场', city: '多伦多', capacity: '45,500',
+        tz: 'UTC-4', timeLocal: '6/12 16:00', status: 'live', note: '🇨🇦 东道主首秀'
     },
     {
-        id: 5, dateBJ: '6月13日 (周五)', timeBJ: '04:00', group: 'C组', stage: '小组赛 第1轮',
-        home: { flag: '🇵🇹', name: '葡萄牙' }, away: { flag: '🇯🇲', name: '牙买加' },
-        stadium: '吉列体育场', city: '福克斯堡', capacity: '65,878',
-        tz: 'UTC-4', timeLocal: '6/12 16:00', status: 'live', note: ''
+        id: 4, dateBJ: '6月13日 (周六)', timeBJ: '07:00', group: 'B组', stage: '小组赛 第1轮',
+        home: { flag: '🇶🇦', name: '卡塔尔' }, away: { flag: '🇨🇭', name: '瑞士' },
+        stadium: 'BC Place', city: '温哥华', capacity: '54,500',
+        tz: 'UTC-7', timeLocal: '6/12 16:00', status: 'upcoming', note: ''
     },
     {
-        id: 6, dateBJ: '6月13日 (周五)', timeBJ: '11:00', group: 'D组', stage: '小组赛 第1轮',
-        home: { flag: '🇺🇸', name: '美国' }, away: { flag: '🇰🇷', name: '韩国' },
+        id: 5, dateBJ: '6月13日 (周六)', timeBJ: '11:00', group: 'D组', stage: '小组赛 第1轮',
+        home: { flag: '🇺🇸', name: '美国' }, away: { flag: '🇵🇾', name: '巴拉圭' },
         stadium: 'SoFi体育场', city: '洛杉矶', capacity: '70,240',
         tz: 'UTC-7', timeLocal: '6/12 20:00', status: 'upcoming', note: '🇺🇸 东道主首秀'
     },
 
-    // ════ 6月14日 (周六) 北京时间 ════
+    // ════ 6月14日 (周日) ════
     {
-        id: 7, dateBJ: '6月14日 (周六)', timeBJ: '01:00', group: 'D组', stage: '小组赛 第1轮',
-        home: { flag: '🇧🇷', name: '巴西' }, away: { flag: '🇳🇬', name: '尼日利亚' },
+        id: 6, dateBJ: '6月14日 (周日)', timeBJ: '01:00', group: 'C组', stage: '小组赛 第1轮',
+        home: { flag: '🏴󠁧󠁢󠁳󠁣󠁴󠁿', name: '苏格兰' }, away: { flag: '🇭🇹', name: '海地' },
         stadium: 'AT&T体育场', city: '达拉斯', capacity: '80,000',
-        tz: 'UTC-5', timeLocal: '6/13 12:00', status: 'upcoming', note: '🇧🇷 桑巴军团登场'
+        tz: 'UTC-5', timeLocal: '6/13 12:00', status: 'upcoming', note: ''
     },
     {
-        id: 8, dateBJ: '6月14日 (周六)', timeBJ: '04:00', group: 'E组', stage: '小组赛 第1轮',
-        home: { flag: '🇫🇷', name: '法国' }, away: { flag: '🇦🇺', name: '澳大利亚' },
+        id: 7, dateBJ: '6月14日 (周日)', timeBJ: '06:00', group: 'C组', stage: '小组赛 第1轮',
+        home: { flag: '🇧🇷', name: '巴西' }, away: { flag: '🇲🇦', name: '摩洛哥' },
+        stadium: '大都会人寿体育场', city: '新泽西', capacity: '82,500',
+        tz: 'UTC-4', timeLocal: '6/13 18:00', status: 'upcoming', note: '🇧🇷 五星巴西首秀'
+    },
+    {
+        id: 8, dateBJ: '6月14日 (周日)', timeBJ: '10:00', group: 'E组', stage: '小组赛 第1轮',
+        home: { flag: '🇩🇪', name: '德国' }, away: { flag: '🇨🇼', name: '库拉索' },
         stadium: '梅赛德斯-奔驰体育场', city: '亚特兰大', capacity: '71,000',
-        tz: 'UTC-4', timeLocal: '6/13 16:00', status: 'upcoming', note: ''
-    },
-    {
-        id: 9, dateBJ: '6月14日 (周六)', timeBJ: '08:00', group: 'E组', stage: '小组赛 第1轮',
-        home: { flag: '🇪🇸', name: '西班牙' }, away: { flag: '🇨🇷', name: '哥斯达黎加' },
-        stadium: 'Hard Rock体育场', city: '迈阿密', capacity: '64,767',
-        tz: 'UTC-4', timeLocal: '6/13 20:00', status: 'upcoming', note: ''
+        tz: 'UTC-4', timeLocal: '6/13 22:00', status: 'upcoming', note: '🇩🇪 德国战车登场'
     },
 
-    // ════ 6月15日 (周日) 北京时间 ════
+    // ════ 6月15日 (周一) ════
     {
-        id: 10, dateBJ: '6月15日 (周日)', timeBJ: '03:00', group: 'F组', stage: '小组赛 第1轮',
-        home: { flag: '🏴󠁧󠁢󠁥󠁮󠁧󠁿', name: '英格兰' }, away: { flag: '🇶🇦', name: '卡塔尔' },
+        id: 9, dateBJ: '6月15日 (周一)', timeBJ: '04:00', group: 'F组', stage: '小组赛 第1轮',
+        home: { flag: '🇳🇱', name: '荷兰' }, away: { flag: '🇯🇵', name: '日本' },
         stadium: '李维斯体育场', city: '圣克拉拉', capacity: '68,500',
-        tz: 'UTC-7', timeLocal: '6/14 12:00', status: 'upcoming', note: ''
+        tz: 'UTC-7', timeLocal: '6/14 13:00', status: 'upcoming', note: '💥 日本挑战荷兰'
     },
     {
-        id: 11, dateBJ: '6月15日 (周日)', timeBJ: '04:00', group: 'F组', stage: '小组赛 第1轮',
-        home: { flag: '🇮🇹', name: '意大利' }, away: { flag: '🇨🇴', name: '哥伦比亚' },
+        id: 10, dateBJ: '6月15日 (周一)', timeBJ: '06:00', group: 'F组', stage: '小组赛 第1轮',
+        home: { flag: '🇸🇪', name: '瑞典' }, away: { flag: '🇹🇳', name: '突尼斯' },
         stadium: '林肯金融体育场', city: '费城', capacity: '67,594',
-        tz: 'UTC-4', timeLocal: '6/14 16:00', status: 'upcoming', note: '💥 焦点对决'
+        tz: 'UTC-4', timeLocal: '6/14 18:00', status: 'upcoming', note: ''
     },
     {
-        id: 12, dateBJ: '6月15日 (周日)', timeBJ: '11:00', group: 'B组', stage: '小组赛 第1轮',
-        home: { flag: '🇩🇪', name: '德国' }, away: { flag: '🇯🇵', name: '日本' },
-        stadium: 'BC Place', city: '温哥华', capacity: '54,500',
-        tz: 'UTC-7', timeLocal: '6/14 20:00', status: 'upcoming', note: ''
-    },
-
-    // ════ 6月16日 (周一) 北京时间 ════
-    {
-        id: 13, dateBJ: '6月16日 (周一)', timeBJ: '01:00', group: 'G组', stage: '小组赛 第1轮',
-        home: { flag: '🇧🇪', name: '比利时' }, away: { flag: '🇮🇷', name: '伊朗' },
-        stadium: '阿罗黑德体育场', city: '堪萨斯城', capacity: '76,416',
-        tz: 'UTC-5', timeLocal: '6/15 12:00', status: 'upcoming', note: ''
-    },
-    {
-        id: 14, dateBJ: '6月16日 (周一)', timeBJ: '05:00', group: 'G组', stage: '小组赛 第1轮',
-        home: { flag: '🇺🇾', name: '乌拉圭' }, away: { flag: '🇭🇷', name: '克罗地亚' },
+        id: 11, dateBJ: '6月15日 (周一)', timeBJ: '09:00', group: 'D组', stage: '小组赛 第1轮',
+        home: { flag: '🇦🇺', name: '澳大利亚' }, away: { flag: '🇹🇷', name: '土耳其' },
         stadium: 'NRG体育场', city: '休斯顿', capacity: '72,220',
-        tz: 'UTC-5', timeLocal: '6/15 16:00', status: 'upcoming', note: ''
-    },
-    {
-        id: 15, dateBJ: '6月16日 (周一)', timeBJ: '11:00', group: 'H组', stage: '小组赛 第1轮',
-        home: { flag: '🇩🇰', name: '丹麦' }, away: { flag: '🇵🇱', name: '波兰' },
-        stadium: 'Lumen体育场', city: '西雅图', capacity: '68,740',
-        tz: 'UTC-7', timeLocal: '6/15 20:00', status: 'upcoming', note: ''
+        tz: 'UTC-5', timeLocal: '6/14 20:00', status: 'upcoming', note: ''
     },
 
-    // ════ 6月17日 (周二) 北京时间 ════
+    // ════ 6月16日 (周二) ════
     {
-        id: 16, dateBJ: '6月17日 (周二)', timeBJ: '00:00', group: 'H组', stage: '小组赛 第1轮',
-        home: { flag: '🇨🇱', name: '智利' }, away: { flag: '🇿🇦', name: '南非' },
-        stadium: '联邦快递体育场', city: '兰多弗', capacity: '62,000',
-        tz: 'UTC-4', timeLocal: '6/16 12:00', status: 'upcoming', note: ''
-    },
-    {
-        id: 17, dateBJ: '6月17日 (周二)', timeBJ: '04:00', group: 'I组', stage: '小组赛 第1轮',
-        home: { flag: '🇳🇴', name: '挪威' }, away: { flag: '🇸🇦', name: '沙特阿拉伯' },
-        stadium: '吉列体育场', city: '福克斯堡', capacity: '65,878',
-        tz: 'UTC-4', timeLocal: '6/16 16:00', status: 'upcoming', note: ''
-    },
-    {
-        id: 18, dateBJ: '6月17日 (周二)', timeBJ: '08:00', group: 'I组', stage: '小组赛 第1轮',
-        home: { flag: '🇪🇨', name: '厄瓜多尔' }, away: { flag: '🇨🇲', name: '喀麦隆' },
-        stadium: '大都会人寿体育场', city: '新泽西', capacity: '82,500',
-        tz: 'UTC-4', timeLocal: '6/16 20:00', status: 'upcoming', note: ''
-    },
-
-    // ════ 6月18日 (周三) 北京时间 ════
-    {
-        id: 19, dateBJ: '6月18日 (周三)', timeBJ: '01:00', group: 'J组', stage: '小组赛 第1轮',
-        home: { flag: '🇷🇸', name: '塞尔维亚' }, away: { flag: '🇵🇦', name: '巴拿马' },
-        stadium: 'AT&T体育场', city: '达拉斯', capacity: '80,000',
-        tz: 'UTC-5', timeLocal: '6/17 12:00', status: 'upcoming', note: ''
-    },
-    {
-        id: 20, dateBJ: '6月18日 (周三)', timeBJ: '07:00', group: 'J组', stage: '小组赛 第1轮',
-        home: { flag: '🇵🇪', name: '秘鲁' }, away: { flag: '🇹🇳', name: '突尼斯' },
-        stadium: 'SoFi体育场', city: '洛杉矶', capacity: '70,240',
-        tz: 'UTC-7', timeLocal: '6/17 16:00', status: 'upcoming', note: ''
-    },
-    {
-        id: 21, dateBJ: '6月18日 (周三)', timeBJ: '11:00', group: 'K组', stage: '小组赛 第1轮',
-        home: { flag: '🇸🇪', name: '瑞典' }, away: { flag: '🇳🇿', name: '新西兰' },
-        stadium: 'Lumen体育场', city: '西雅图', capacity: '68,740',
-        tz: 'UTC-7', timeLocal: '6/17 20:00', status: 'upcoming', note: ''
-    },
-
-    // ════ 6月19日 (周四) 北京时间 ════
-    {
-        id: 22, dateBJ: '6月19日 (周四)', timeBJ: '00:00', group: 'K组', stage: '小组赛 第1轮',
-        home: { flag: '🇨🇭', name: '瑞士' }, away: { flag: '🇬🇭', name: '加纳' },
-        stadium: '梅赛德斯-奔驰体育场', city: '亚特兰大', capacity: '71,000',
-        tz: 'UTC-4', timeLocal: '6/18 12:00', status: 'upcoming', note: ''
-    },
-    {
-        id: 23, dateBJ: '6月19日 (周四)', timeBJ: '04:00', group: 'L组', stage: '小组赛 第1轮',
-        home: { flag: '🇦🇹', name: '奥地利' }, away: { flag: '🇨🇳', name: '中国' },
-        stadium: 'BMO体育场', city: '多伦多', capacity: '45,500',
-        tz: 'UTC-4', timeLocal: '6/18 16:00', status: 'upcoming', note: '🇨🇳 中国队首战！6月19日凌晨4点'
-    },
-    {
-        id: 24, dateBJ: '6月19日 (周四)', timeBJ: '10:00', group: 'L组', stage: '小组赛 第1轮',
-        home: { flag: '🇹🇷', name: '土耳其' }, away: { flag: '🇩🇿', name: '阿尔及利亚' },
-        stadium: 'BBVA体育场', city: '蒙特雷', capacity: '53,500',
-        tz: 'UTC-6', timeLocal: '6/18 20:00', status: 'upcoming', note: ''
-    },
-
-    // ════ 6月20日 (周五) 北京时间 ════
-    {
-        id: 25, dateBJ: '6月20日 (周五)', timeBJ: '02:00', group: 'A组', stage: '小组赛 第2轮',
-        home: { flag: '🇲🇽', name: '墨西哥' }, away: { flag: '🇸🇳', name: '塞内加尔' },
-        stadium: '阿兹特克体育场', city: '墨西哥城', capacity: '87,523',
-        tz: 'UTC-6', timeLocal: '6/19 12:00', status: 'upcoming', note: ''
-    },
-    {
-        id: 26, dateBJ: '6月20日 (周五)', timeBJ: '04:00', group: 'A组', stage: '小组赛 第2轮',
-        home: { flag: '🇳🇱', name: '荷兰' }, away: { flag: '🇦🇪', name: '阿联酋' },
-        stadium: '联邦快递体育场', city: '兰多弗', capacity: '62,000',
-        tz: 'UTC-4', timeLocal: '6/19 16:00', status: 'upcoming', note: ''
-    },
-    {
-        id: 27, dateBJ: '6月20日 (周五)', timeBJ: '08:00', group: 'C组', stage: '小组赛 第2轮',
-        home: { flag: '🇦🇷', name: '阿根廷' }, away: { flag: '🇵🇹', name: '葡萄牙' },
-        stadium: '大都会人寿体育场', city: '新泽西', capacity: '82,500',
-        tz: 'UTC-4', timeLocal: '6/19 20:00', status: 'upcoming', note: '💥 梅西 vs C罗！世纪对决'
-    },
-
-    // ════ 6月21日 (周六) 北京时间 ════
-    {
-        id: 28, dateBJ: '6月21日 (周六)', timeBJ: '00:00', group: 'C组', stage: '小组赛 第2轮',
-        home: { flag: '🇪🇬', name: '埃及' }, away: { flag: '🇯🇲', name: '牙买加' },
+        id: 12, dateBJ: '6月16日 (周二)', timeBJ: '04:00', group: 'E组', stage: '小组赛 第1轮',
+        home: { flag: '🇨🇮', name: '科特迪瓦' }, away: { flag: '🇪🇨', name: '厄瓜多尔' },
         stadium: 'Hard Rock体育场', city: '迈阿密', capacity: '64,767',
-        tz: 'UTC-4', timeLocal: '6/20 12:00', status: 'upcoming', note: ''
+        tz: 'UTC-4', timeLocal: '6/15 16:00', status: 'upcoming', note: ''
     },
     {
-        id: 29, dateBJ: '6月21日 (周六)', timeBJ: '07:00', group: 'D组', stage: '小组赛 第2轮',
-        home: { flag: '🇺🇸', name: '美国' }, away: { flag: '🇧🇷', name: '巴西' },
+        id: 13, dateBJ: '6月16日 (周二)', timeBJ: '06:00', group: 'G组', stage: '小组赛 第1轮',
+        home: { flag: '🇧🇪', name: '比利时' }, away: { flag: '🇪🇬', name: '埃及' },
+        stadium: '阿罗黑德体育场', city: '堪萨斯城', capacity: '76,416',
+        tz: 'UTC-5', timeLocal: '6/15 17:00', status: 'upcoming', note: ''
+    },
+    {
+        id: 14, dateBJ: '6月16日 (周二)', timeBJ: '09:00', group: 'G组', stage: '小组赛 第1轮',
+        home: { flag: '🇮🇷', name: '伊朗' }, away: { flag: '🇳🇿', name: '新西兰' },
+        stadium: 'Lumen体育场', city: '西雅图', capacity: '68,740',
+        tz: 'UTC-7', timeLocal: '6/15 18:00', status: 'upcoming', note: ''
+    },
+
+    // ════ 6月17日 (周三) — 梅西首秀 ════
+    {
+        id: 15, dateBJ: '6月17日 (周三)', timeBJ: '06:00', group: 'I组', stage: '小组赛 第1轮',
+        home: { flag: '🇮🇶', name: '伊拉克' }, away: { flag: '🇳🇴', name: '挪威' },
+        stadium: '吉列体育场', city: '福克斯堡', capacity: '65,878',
+        tz: 'UTC-4', timeLocal: '6/16 18:00', status: 'upcoming', note: '🌟 哈兰德世界杯首秀'
+    },
+    {
+        id: 16, dateBJ: '6月17日 (周三)', timeBJ: '09:00', group: 'J组', stage: '小组赛 第1轮',
+        home: { flag: '🇦🇷', name: '阿根廷' }, away: { flag: '🇩🇿', name: '阿尔及利亚' },
+        stadium: '大都会人寿体育场', city: '新泽西', capacity: '82,500',
+        tz: 'UTC-4', timeLocal: '6/16 21:00', status: 'upcoming', note: '⭐ 梅西世界杯首秀！CCTV5直播'
+    },
+    {
+        id: 17, dateBJ: '6月17日 (周三)', timeBJ: '11:00', group: 'I组', stage: '小组赛 第1轮',
+        home: { flag: '🇫🇷', name: '法国' }, away: { flag: '🇸🇳', name: '塞内加尔' },
         stadium: 'SoFi体育场', city: '洛杉矶', capacity: '70,240',
-        tz: 'UTC-7', timeLocal: '6/20 16:00', status: 'upcoming', note: '💥 美洲德比'
-    },
-    {
-        id: 30, dateBJ: '6月21日 (周六)', timeBJ: '11:00', group: 'B组', stage: '小组赛 第2轮',
-        home: { flag: '🇨🇦', name: '加拿大' }, away: { flag: '🇩🇪', name: '德国' },
-        stadium: 'BC Place', city: '温哥华', capacity: '54,500',
-        tz: 'UTC-7', timeLocal: '6/20 20:00', status: 'upcoming', note: ''
+        tz: 'UTC-7', timeLocal: '6/16 20:00', status: 'upcoming', note: '🇫🇷 卫冕冠军首秀'
     },
 
-    // ════ 6月22日 (周日) 北京时间 ════
+    // ════ 6月18日 (周四) — C罗首秀 ════
     {
-        id: 31, dateBJ: '6月22日 (周日)', timeBJ: '01:00', group: 'E组', stage: '小组赛 第2轮',
-        home: { flag: '🇫🇷', name: '法国' }, away: { flag: '🇪🇸', name: '西班牙' },
+        id: 18, dateBJ: '6月18日 (周四)', timeBJ: '01:00', group: 'K组', stage: '小组赛 第1轮',
+        home: { flag: '🇵🇹', name: '葡萄牙' }, away: { flag: '🇨🇩', name: '刚果(金)' },
         stadium: 'AT&T体育场', city: '达拉斯', capacity: '80,000',
-        tz: 'UTC-5', timeLocal: '6/21 12:00', status: 'upcoming', note: '🔥 欧洲杯级对决'
+        tz: 'UTC-5', timeLocal: '6/17 12:00', status: 'upcoming', note: '⭐ C罗首秀！CCTV5直播'
     },
     {
-        id: 32, dateBJ: '6月22日 (周日)', timeBJ: '04:00', group: 'F组', stage: '小组赛 第2轮',
-        home: { flag: '🏴󠁧󠁢󠁥󠁮󠁧󠁿', name: '英格兰' }, away: { flag: '🇮🇹', name: '意大利' },
+        id: 19, dateBJ: '6月18日 (周四)', timeBJ: '04:00', group: 'L组', stage: '小组赛 第1轮',
+        home: { flag: '🏴󠁧󠁢󠁥󠁮󠁧󠁿', name: '英格兰' }, away: { flag: '🇭🇷', name: '克罗地亚' },
         stadium: '梅赛德斯-奔驰体育场', city: '亚特兰大', capacity: '71,000',
-        tz: 'UTC-4', timeLocal: '6/21 16:00', status: 'upcoming', note: '💥 欧洲豪门对决'
+        tz: 'UTC-4', timeLocal: '6/17 16:00', status: 'upcoming', note: '💥 强强对话！CCTV5直播'
     },
     {
-        id: 33, dateBJ: '6月22日 (周日)', timeBJ: '11:00', group: 'D组', stage: '小组赛 第2轮',
-        home: { flag: '🇰🇷', name: '韩国' }, away: { flag: '🇳🇬', name: '尼日利亚' },
-        stadium: '李维斯体育场', city: '圣克拉拉', capacity: '68,500',
-        tz: 'UTC-7', timeLocal: '6/21 20:00', status: 'upcoming', note: ''
+        id: 20, dateBJ: '6月18日 (周四)', timeBJ: '06:00', group: 'H组', stage: '小组赛 第1轮',
+        home: { flag: '🇪🇸', name: '西班牙' }, away: { flag: '🇨🇻', name: '佛得角' },
+        stadium: '联邦快递体育场', city: '兰多弗', capacity: '62,000',
+        tz: 'UTC-4', timeLocal: '6/17 18:00', status: 'upcoming', note: ''
+    },
+    {
+        id: 21, dateBJ: '6月18日 (周四)', timeBJ: '09:00', group: 'H组', stage: '小组赛 第1轮',
+        home: { flag: '🇸🇦', name: '沙特阿拉伯' }, away: { flag: '🇺🇾', name: '乌拉圭' },
+        stadium: 'Lumen体育场', city: '西雅图', capacity: '68,740',
+        tz: 'UTC-7', timeLocal: '6/17 18:00', status: 'upcoming', note: ''
     },
 
-    // ════ 6月23日 (周一) 北京时间 ════
+    // ════ 6月19日 (周五) ════
     {
-        id: 34, dateBJ: '6月23日 (周一)', timeBJ: '01:00', group: 'G组', stage: '小组赛 第2轮',
-        home: { flag: '🇧🇪', name: '比利时' }, away: { flag: '🇺🇾', name: '乌拉圭' },
-        stadium: 'NRG体育场', city: '休斯顿', capacity: '72,220',
-        tz: 'UTC-5', timeLocal: '6/22 12:00', status: 'upcoming', note: ''
+        id: 22, dateBJ: '6月19日 (周五)', timeBJ: '04:00', group: 'K组', stage: '小组赛 第1轮',
+        home: { flag: '🇺🇿', name: '乌兹别克斯坦' }, away: { flag: '🇨🇴', name: '哥伦比亚' },
+        stadium: 'BC Place', city: '温哥华', capacity: '54,500',
+        tz: 'UTC-7', timeLocal: '6/18 13:00', status: 'upcoming', note: ''
     },
     {
-        id: 35, dateBJ: '6月23日 (周一)', timeBJ: '04:00', group: 'L组', stage: '小组赛 第2轮',
-        home: { flag: '🇨🇳', name: '中国' }, away: { flag: '🇹🇷', name: '土耳其' },
+        id: 23, dateBJ: '6月19日 (周五)', timeBJ: '06:00', group: 'L组', stage: '小组赛 第1轮',
+        home: { flag: '🇬🇭', name: '加纳' }, away: { flag: '🇵🇦', name: '巴拿马' },
         stadium: 'BMO体育场', city: '多伦多', capacity: '45,500',
-        tz: 'UTC-4', timeLocal: '6/22 16:00', status: 'upcoming', note: '🇨🇳 中国队第2场'
+        tz: 'UTC-4', timeLocal: '6/18 18:00', status: 'upcoming', note: ''
     },
     {
-        id: 36, dateBJ: '6月23日 (周一)', timeBJ: '09:00', group: 'H组', stage: '小组赛 第2轮',
-        home: { flag: '🇩🇰', name: '丹麦' }, away: { flag: '🇨🇱', name: '智利' },
+        id: 24, dateBJ: '6月19日 (周五)', timeBJ: '09:00', group: 'J组', stage: '小组赛 第1轮',
+        home: { flag: '🇦🇹', name: '奥地利' }, away: { flag: '🇯🇴', name: '约旦' },
+        stadium: 'BBVA体育场', city: '蒙特雷', capacity: '53,500',
+        tz: 'UTC-6', timeLocal: '6/18 19:00', status: 'upcoming', note: ''
+    },
+
+    // ════ 6月20日 (周六) 小组赛第2轮 ════
+    {
+        id: 25, dateBJ: '6月20日 (周六)', timeBJ: '04:00', group: 'A组', stage: '小组赛 第2轮',
+        home: { flag: '🇿🇦', name: '南非' }, away: { flag: '🇰🇷', name: '韩国' },
+        stadium: '阿兹特克体育场', city: '墨西哥城', capacity: '87,523',
+        tz: 'UTC-6', timeLocal: '6/19 14:00', status: 'upcoming', note: ''
+    },
+    {
+        id: 26, dateBJ: '6月20日 (周六)', timeBJ: '06:00', group: 'A组', stage: '小组赛 第2轮',
+        home: { flag: '🇲🇽', name: '墨西哥' }, away: { flag: '🇨🇿', name: '捷克' },
+        stadium: '联邦快递体育场', city: '兰多弗', capacity: '62,000',
+        tz: 'UTC-4', timeLocal: '6/19 18:00', status: 'upcoming', note: ''
+    },
+    {
+        id: 27, dateBJ: '6月20日 (周六)', timeBJ: '09:00', group: 'C组', stage: '小组赛 第2轮',
+        home: { flag: '🇧🇷', name: '巴西' }, away: { flag: '🇭🇹', name: '海地' },
+        stadium: '大都会人寿体育场', city: '新泽西', capacity: '82,500',
+        tz: 'UTC-4', timeLocal: '6/19 21:00', status: 'upcoming', note: ''
+    },
+
+    // ════ 6月21日 (周日) ════
+    {
+        id: 28, dateBJ: '6月21日 (周日)', timeBJ: '03:00', group: 'F组', stage: '小组赛 第2轮',
+        home: { flag: '🇳🇱', name: '荷兰' }, away: { flag: '🇸🇪', name: '瑞典' },
+        stadium: 'Hard Rock体育场', city: '迈阿密', capacity: '64,767',
+        tz: 'UTC-4', timeLocal: '6/20 15:00', status: 'upcoming', note: ''
+    },
+    {
+        id: 29, dateBJ: '6月21日 (周日)', timeBJ: '09:00', group: 'D组', stage: '小组赛 第2轮',
+        home: { flag: '🇺🇸', name: '美国' }, away: { flag: '🇹🇷', name: '土耳其' },
+        stadium: 'SoFi体育场', city: '洛杉矶', capacity: '70,240',
+        tz: 'UTC-7', timeLocal: '6/20 18:00', status: 'upcoming', note: '💥 东道主关键战'
+    },
+
+    // ════ 6月22日 (周一) ════
+    {
+        id: 30, dateBJ: '6月22日 (周一)', timeBJ: '06:00', group: 'B组', stage: '小组赛 第2轮',
+        home: { flag: '🇨🇦', name: '加拿大' }, away: { flag: '🇶🇦', name: '卡塔尔' },
+        stadium: 'BMO体育场', city: '多伦多', capacity: '45,500',
+        tz: 'UTC-4', timeLocal: '6/21 18:00', status: 'upcoming', note: ''
+    },
+    {
+        id: 31, dateBJ: '6月22日 (周一)', timeBJ: '09:00', group: 'E组', stage: '小组赛 第2轮',
+        home: { flag: '🇩🇪', name: '德国' }, away: { flag: '🇨🇮', name: '科特迪瓦' },
+        stadium: 'AT&T体育场', city: '达拉斯', capacity: '80,000',
+        tz: 'UTC-5', timeLocal: '6/21 20:00', status: 'upcoming', note: ''
+    },
+
+    // ════ 6月23日 (周二) ════
+    {
+        id: 32, dateBJ: '6月23日 (周二)', timeBJ: '06:00', group: 'H组', stage: '小组赛 第2轮',
+        home: { flag: '🇪🇸', name: '西班牙' }, away: { flag: '🇸🇦', name: '沙特阿拉伯' },
+        stadium: '林肯金融体育场', city: '费城', capacity: '67,594',
+        tz: 'UTC-4', timeLocal: '6/22 18:00', status: 'upcoming', note: ''
+    },
+    {
+        id: 33, dateBJ: '6月23日 (周二)', timeBJ: '09:00', group: 'G组', stage: '小组赛 第2轮',
+        home: { flag: '🇧🇪', name: '比利时' }, away: { flag: '🇮🇷', name: '伊朗' },
         stadium: '阿罗黑德体育场', city: '堪萨斯城', capacity: '76,416',
         tz: 'UTC-5', timeLocal: '6/22 20:00', status: 'upcoming', note: ''
     },
 
-    // ════ 6月24日 (周二) 北京时间 ════
+    // ════ 6月24日 (周三) ════
     {
-        id: 37, dateBJ: '6月24日 (周二)', timeBJ: '00:00', group: 'I组', stage: '小组赛 第2轮',
-        home: { flag: '🇳🇴', name: '挪威' }, away: { flag: '🇪🇨', name: '厄瓜多尔' },
-        stadium: '林肯金融体育场', city: '费城', capacity: '67,594',
-        tz: 'UTC-4', timeLocal: '6/23 12:00', status: 'upcoming', note: ''
+        id: 34, dateBJ: '6月24日 (周三)', timeBJ: '04:00', group: 'J组', stage: '小组赛 第2轮',
+        home: { flag: '🇦🇷', name: '阿根廷' }, away: { flag: '🇦🇹', name: '奥地利' },
+        stadium: '大都会人寿体育场', city: '新泽西', capacity: '82,500',
+        tz: 'UTC-4', timeLocal: '6/23 16:00', status: 'upcoming', note: '⭐ 梅西第2场'
     },
     {
-        id: 38, dateBJ: '6月24日 (周二)', timeBJ: '04:00', group: 'J组', stage: '小组赛 第2轮',
-        home: { flag: '🇷🇸', name: '塞尔维亚' }, away: { flag: '🇵🇪', name: '秘鲁' },
+        id: 35, dateBJ: '6月24日 (周三)', timeBJ: '06:00', group: 'K组', stage: '小组赛 第2轮',
+        home: { flag: '🇵🇹', name: '葡萄牙' }, away: { flag: '🇺🇿', name: '乌兹别克斯坦' },
         stadium: '吉列体育场', city: '福克斯堡', capacity: '65,878',
-        tz: 'UTC-4', timeLocal: '6/23 16:00', status: 'upcoming', note: ''
+        tz: 'UTC-4', timeLocal: '6/23 18:00', status: 'upcoming', note: '⭐ C罗第2场'
     },
     {
-        id: 39, dateBJ: '6月24日 (周二)', timeBJ: '11:00', group: 'K组', stage: '小组赛 第2轮',
-        home: { flag: '🇸🇪', name: '瑞典' }, away: { flag: '🇨🇭', name: '瑞士' },
-        stadium: 'BC Place', city: '温哥华', capacity: '54,500',
-        tz: 'UTC-7', timeLocal: '6/23 20:00', status: 'upcoming', note: ''
+        id: 36, dateBJ: '6月24日 (周三)', timeBJ: '09:00', group: 'I组', stage: '小组赛 第2轮',
+        home: { flag: '🇫🇷', name: '法国' }, away: { flag: '🇮🇶', name: '伊拉克' },
+        stadium: 'NRG体育场', city: '休斯顿', capacity: '72,220',
+        tz: 'UTC-5', timeLocal: '6/23 20:00', status: 'upcoming', note: ''
     },
 
-    // ════ 6月25日 (周三) 北京时间 — 小组赛第3轮开始 ════
+    // ════ 6月25日-26日 小组赛第3轮 (同组同时开球) ════
     {
-        id: 40, dateBJ: '6月25日 (周三)', timeBJ: '06:00', group: 'A组', stage: '小组赛 第3轮',
-        home: { flag: '🇲🇽', name: '墨西哥' }, away: { flag: '🇦🇪', name: '阿联酋' },
+        id: 40, dateBJ: '6月25日 (周四)', timeBJ: '06:00', group: 'A组', stage: '小组赛 第3轮',
+        home: { flag: '🇲🇽', name: '墨西哥' }, away: { flag: '🇰🇷', name: '韩国' },
         stadium: '阿兹特克体育场', city: '墨西哥城', capacity: '87,523',
         tz: 'UTC-6', timeLocal: '6/24 16:00', status: 'upcoming', note: '小组赛末轮'
     },
     {
-        id: 41, dateBJ: '6月25日 (周三)', timeBJ: '04:00', group: 'A组', stage: '小组赛 第3轮',
-        home: { flag: '🇳🇱', name: '荷兰' }, away: { flag: '🇸🇳', name: '塞内加尔' },
+        id: 41, dateBJ: '6月25日 (周四)', timeBJ: '06:00', group: 'A组', stage: '小组赛 第3轮',
+        home: { flag: '🇿🇦', name: '南非' }, away: { flag: '🇨🇿', name: '捷克' },
         stadium: '联邦快递体育场', city: '兰多弗', capacity: '62,000',
-        tz: 'UTC-4', timeLocal: '6/24 16:00', status: 'upcoming', note: '小组赛末轮（同时开球）'
+        tz: 'UTC-4', timeLocal: '6/24 18:00', status: 'upcoming', note: '同时开球'
     },
     {
-        id: 42, dateBJ: '6月25日 (周三)', timeBJ: '08:00', group: 'C组', stage: '小组赛 第3轮',
-        home: { flag: '🇦🇷', name: '阿根廷' }, away: { flag: '🇯🇲', name: '牙买加' },
+        id: 42, dateBJ: '6月25日 (周四)', timeBJ: '09:00', group: 'C组', stage: '小组赛 第3轮',
+        home: { flag: '🇧🇷', name: '巴西' }, away: { flag: '🏴󠁧󠁢󠁳󠁣󠁴󠁿', name: '苏格兰' },
         stadium: '大都会人寿体育场', city: '新泽西', capacity: '82,500',
-        tz: 'UTC-4', timeLocal: '6/24 20:00', status: 'upcoming', note: ''
+        tz: 'UTC-4', timeLocal: '6/24 21:00', status: 'upcoming', note: ''
     },
     {
-        id: 43, dateBJ: '6月25日 (周三)', timeBJ: '09:00', group: 'C组', stage: '小组赛 第3轮',
-        home: { flag: '🇵🇹', name: '葡萄牙' }, away: { flag: '🇪🇬', name: '埃及' },
-        stadium: 'AT&T体育场', city: '达拉斯', capacity: '80,000',
-        tz: 'UTC-5', timeLocal: '6/24 20:00', status: 'upcoming', note: ''
-    },
-
-    // ════ 6月26日 (周四) 北京时间 ════
-    {
-        id: 44, dateBJ: '6月26日 (周四)', timeBJ: '04:00', group: 'B组', stage: '小组赛 第3轮',
-        home: { flag: '🇨🇦', name: '加拿大' }, away: { flag: '🇯🇵', name: '日本' },
-        stadium: 'BMO体育场', city: '多伦多', capacity: '45,500',
-        tz: 'UTC-4', timeLocal: '6/25 16:00', status: 'upcoming', note: ''
-    },
-    {
-        id: 45, dateBJ: '6月26日 (周四)', timeBJ: '07:00', group: 'B组', stage: '小组赛 第3轮',
-        home: { flag: '🇩🇪', name: '德国' }, away: { flag: '🇲🇦', name: '摩洛哥' },
-        stadium: 'BC Place', city: '温哥华', capacity: '54,500',
-        tz: 'UTC-7', timeLocal: '6/25 16:00', status: 'upcoming', note: ''
-    },
-    {
-        id: 46, dateBJ: '6月26日 (周四)', timeBJ: '11:00', group: 'D组', stage: '小组赛 第3轮',
-        home: { flag: '🇺🇸', name: '美国' }, away: { flag: '🇳🇬', name: '尼日利亚' },
+        id: 44, dateBJ: '6月26日 (周五)', timeBJ: '06:00', group: 'D组', stage: '小组赛 第3轮',
+        home: { flag: '🇺🇸', name: '美国' }, away: { flag: '🇦🇺', name: '澳大利亚' },
         stadium: 'SoFi体育场', city: '洛杉矶', capacity: '70,240',
-        tz: 'UTC-7', timeLocal: '6/25 20:00', status: 'upcoming', note: ''
+        tz: 'UTC-7', timeLocal: '6/25 15:00', status: 'upcoming', note: '东道主出线关键战'
     },
     {
-        id: 47, dateBJ: '6月26日 (周四)', timeBJ: '11:00', group: 'D组', stage: '小组赛 第3轮',
-        home: { flag: '🇧🇷', name: '巴西' }, away: { flag: '🇰🇷', name: '韩国' },
+        id: 45, dateBJ: '6月26日 (周五)', timeBJ: '09:00', group: 'F组', stage: '小组赛 第3轮',
+        home: { flag: '🇳🇱', name: '荷兰' }, away: { flag: '🇹🇳', name: '突尼斯' },
         stadium: '李维斯体育场', city: '圣克拉拉', capacity: '68,500',
-        tz: 'UTC-7', timeLocal: '6/25 20:00', status: 'upcoming', note: ''
+        tz: 'UTC-7', timeLocal: '6/25 18:00', status: 'upcoming', note: ''
+    },
+    {
+        id: 46, dateBJ: '6月26日 (周五)', timeBJ: '09:00', group: 'F组', stage: '小组赛 第3轮',
+        home: { flag: '🇯🇵', name: '日本' }, away: { flag: '🇸🇪', name: '瑞典' },
+        stadium: 'Lumen体育场', city: '西雅图', capacity: '68,740',
+        tz: 'UTC-7', timeLocal: '6/25 18:00', status: 'upcoming', note: '🇯🇵 日本出线关键战'
     },
 
-    // ════ 6月27日 (周五) 北京时间 ════
+    // ════ 6月27日 (周六) ════
     {
-        id: 48, dateBJ: '6月27日 (周五)', timeBJ: '04:00', group: 'E组', stage: '小组赛 第3轮',
-        home: { flag: '🇫🇷', name: '法国' }, away: { flag: '🇨🇷', name: '哥斯达黎加' },
-        stadium: '梅赛德斯-奔驰体育场', city: '亚特兰大', capacity: '71,000',
-        tz: 'UTC-4', timeLocal: '6/26 16:00', status: 'upcoming', note: ''
-    },
-    {
-        id: 49, dateBJ: '6月27日 (周五)', timeBJ: '04:00', group: 'E组', stage: '小组赛 第3轮',
-        home: { flag: '🇪🇸', name: '西班牙' }, away: { flag: '🇦🇺', name: '澳大利亚' },
-        stadium: 'Hard Rock体育场', city: '迈阿密', capacity: '64,767',
-        tz: 'UTC-4', timeLocal: '6/26 16:00', status: 'upcoming', note: ''
-    },
-    {
-        id: 50, dateBJ: '6月27日 (周五)', timeBJ: '08:00', group: 'F组', stage: '小组赛 第3轮',
-        home: { flag: '🏴󠁧󠁢󠁥󠁮󠁧󠁿', name: '英格兰' }, away: { flag: '🇨🇴', name: '哥伦比亚' },
+        id: 47, dateBJ: '6月27日 (周六)', timeBJ: '06:00', group: 'J组', stage: '小组赛 第3轮',
+        home: { flag: '🇦🇷', name: '阿根廷' }, away: { flag: '🇯🇴', name: '约旦' },
         stadium: '大都会人寿体育场', city: '新泽西', capacity: '82,500',
-        tz: 'UTC-4', timeLocal: '6/26 20:00', status: 'upcoming', note: ''
+        tz: 'UTC-4', timeLocal: '6/26 18:00', status: 'upcoming', note: '⭐ 梅西小组收官战'
     },
     {
-        id: 51, dateBJ: '6月27日 (周五)', timeBJ: '08:00', group: 'F组', stage: '小组赛 第3轮',
-        home: { flag: '🇮🇹', name: '意大利' }, away: { flag: '🇶🇦', name: '卡塔尔' },
-        stadium: '林肯金融体育场', city: '费城', capacity: '67,594',
-        tz: 'UTC-4', timeLocal: '6/26 20:00', status: 'upcoming', note: ''
-    },
-
-    // ════ 6月28日 (周六) 北京时间 — 小组赛收官 ════
-    {
-        id: 52, dateBJ: '6月28日 (周六)', timeBJ: '04:00', group: 'L组', stage: '小组赛 第3轮',
-        home: { flag: '🇨🇳', name: '中国' }, away: { flag: '🇦🇹', name: '奥地利' },
-        stadium: 'BMO体育场', city: '多伦多', capacity: '45,500',
-        tz: 'UTC-4', timeLocal: '6/27 16:00', status: 'upcoming', note: '🇨🇳 中国队出线关键战！'
+        id: 48, dateBJ: '6月27日 (周六)', timeBJ: '06:00', group: 'K组', stage: '小组赛 第3轮',
+        home: { flag: '🇵🇹', name: '葡萄牙' }, away: { flag: '🇨🇴', name: '哥伦比亚' },
+        stadium: 'AT&T体育场', city: '达拉斯', capacity: '80,000',
+        tz: 'UTC-5', timeLocal: '6/26 17:00', status: 'upcoming', note: '⭐ C罗小组收官战'
     },
     {
-        id: 53, dateBJ: '6月28日 (周六)', timeBJ: '09:00', group: 'G组', stage: '小组赛 第3轮',
-        home: { flag: '🇧🇪', name: '比利时' }, away: { flag: '🇭🇷', name: '克罗地亚' },
-        stadium: '阿罗黑德体育场', city: '堪萨斯城', capacity: '76,416',
-        tz: 'UTC-5', timeLocal: '6/27 20:00', status: 'upcoming', note: ''
+        id: 49, dateBJ: '6月27日 (周六)', timeBJ: '09:00', group: 'L组', stage: '小组赛 第3轮',
+        home: { flag: '🏴󠁧󠁢󠁥󠁮󠁧󠁿', name: '英格兰' }, away: { flag: '🇬🇭', name: '加纳' },
+        stadium: '梅赛德斯-奔驰体育场', city: '亚特兰大', capacity: '71,000',
+        tz: 'UTC-4', timeLocal: '6/26 21:00', status: 'upcoming', note: ''
     },
 
     // ════ 淘汰赛阶段 ════
     {
-        id: 60, dateBJ: '6月30日 (周一)', timeBJ: '00:00', group: '—', stage: '1/16决赛',
+        id: 60, dateBJ: '6月29日 (周一)', timeBJ: '03:00', group: '—', stage: '1/16决赛',
         home: { flag: '❓', name: '待定' }, away: { flag: '❓', name: '待定' },
         stadium: '大都会人寿体育场', city: '新泽西', capacity: '82,500',
-        tz: 'UTC-4', timeLocal: '6/29 12:00', status: 'upcoming', note: '32强淘汰赛开始'
+        tz: 'UTC-4', timeLocal: '6/28 15:00', status: 'upcoming', note: '32强淘汰赛开始！CCTV5直播'
     },
     {
-        id: 61, dateBJ: '6月30日 (周一)', timeBJ: '05:00', group: '—', stage: '1/16决赛',
+        id: 61, dateBJ: '6月29日 (周一)', timeBJ: '06:00', group: '—', stage: '1/16决赛',
         home: { flag: '❓', name: '待定' }, away: { flag: '❓', name: '待定' },
         stadium: 'AT&T体育场', city: '达拉斯', capacity: '80,000',
-        tz: 'UTC-5', timeLocal: '6/29 16:00', status: 'upcoming', note: ''
+        tz: 'UTC-5', timeLocal: '6/28 17:00', status: 'upcoming', note: 'CCTV5直播'
     },
     {
-        id: 62, dateBJ: '6月30日 (周一)', timeBJ: '11:00', group: '—', stage: '1/16决赛',
+        id: 62, dateBJ: '6月29日 (周一)', timeBJ: '09:00', group: '—', stage: '1/16决赛',
         home: { flag: '❓', name: '待定' }, away: { flag: '❓', name: '待定' },
         stadium: 'SoFi体育场', city: '洛杉矶', capacity: '70,240',
-        tz: 'UTC-7', timeLocal: '6/29 20:00', status: 'upcoming', note: ''
+        tz: 'UTC-7', timeLocal: '6/28 18:00', status: 'upcoming', note: 'CCTV5直播'
     },
+
+    // ════ 1/8决赛 ════
     {
-        id: 70, dateBJ: '7月6日 (周日)', timeBJ: '00:00', group: '—', stage: '1/8决赛',
+        id: 70, dateBJ: '7月5日 (周日)', timeBJ: '03:00', group: '—', stage: '1/8决赛',
         home: { flag: '❓', name: '待定' }, away: { flag: '❓', name: '待定' },
         stadium: '梅赛德斯-奔驰体育场', city: '亚特兰大', capacity: '71,000',
-        tz: 'UTC-4', timeLocal: '7/5 12:00', status: 'upcoming', note: '16强淘汰赛'
+        tz: 'UTC-4', timeLocal: '7/4 15:00', status: 'upcoming', note: '16强战！CCTV5直播'
     },
     {
-        id: 71, dateBJ: '7月6日 (周日)', timeBJ: '07:00', group: '—', stage: '1/8决赛',
+        id: 71, dateBJ: '7月5日 (周日)', timeBJ: '06:00', group: '—', stage: '1/8决赛',
         home: { flag: '❓', name: '待定' }, away: { flag: '❓', name: '待定' },
         stadium: '李维斯体育场', city: '圣克拉拉', capacity: '68,500',
-        tz: 'UTC-7', timeLocal: '7/5 16:00', status: 'upcoming', note: ''
+        tz: 'UTC-7', timeLocal: '7/4 15:00', status: 'upcoming', note: 'CCTV5直播'
     },
+
+    // ════ 1/4决赛 ════
     {
-        id: 72, dateBJ: '7月6日 (周日)', timeBJ: '09:00', group: '—', stage: '1/8决赛',
-        home: { flag: '❓', name: '待定' }, away: { flag: '❓', name: '待定' },
-        stadium: 'NRG体育场', city: '休斯顿', capacity: '72,220',
-        tz: 'UTC-5', timeLocal: '7/5 20:00', status: 'upcoming', note: ''
-    },
-    {
-        id: 80, dateBJ: '7月12日 (周六)', timeBJ: '04:00', group: '—', stage: '1/4决赛',
+        id: 80, dateBJ: '7月10日 (周五)', timeBJ: '03:00', group: '—', stage: '1/4决赛',
         home: { flag: '❓', name: '待定' }, away: { flag: '❓', name: '待定' },
         stadium: '大都会人寿体育场', city: '新泽西', capacity: '82,500',
-        tz: 'UTC-4', timeLocal: '7/11 16:00', status: 'upcoming', note: '8强战'
+        tz: 'UTC-4', timeLocal: '7/9 15:00', status: 'upcoming', note: '8强战！CCTV5直播'
     },
     {
-        id: 81, dateBJ: '7月12日 (周六)', timeBJ: '09:00', group: '—', stage: '1/4决赛',
+        id: 81, dateBJ: '7月11日 (周六)', timeBJ: '03:00', group: '—', stage: '1/4决赛',
         home: { flag: '❓', name: '待定' }, away: { flag: '❓', name: '待定' },
         stadium: 'AT&T体育场', city: '达拉斯', capacity: '80,000',
-        tz: 'UTC-5', timeLocal: '7/11 20:00', status: 'upcoming', note: ''
+        tz: 'UTC-5', timeLocal: '7/10 14:00', status: 'upcoming', note: 'CCTV5直播'
     },
+
+    // ════ 半决赛 ════
     {
-        id: 90, dateBJ: '7月16日 (周三)', timeBJ: '08:00', group: '—', stage: '半决赛',
+        id: 90, dateBJ: '7月15日 (周三)', timeBJ: '03:00', group: '—', stage: '半决赛',
         home: { flag: '❓', name: '待定' }, away: { flag: '❓', name: '待定' },
         stadium: '梅赛德斯-奔驰体育场', city: '亚特兰大', capacity: '71,000',
-        tz: 'UTC-4', timeLocal: '7/15 20:00', status: 'upcoming', note: '🌟 半决赛'
+        tz: 'UTC-4', timeLocal: '7/14 15:00', status: 'upcoming', note: '🌟 半决赛！CCTV5直播'
     },
     {
-        id: 91, dateBJ: '7月17日 (周四)', timeBJ: '11:00', group: '—', stage: '半决赛',
+        id: 91, dateBJ: '7月16日 (周四)', timeBJ: '03:00', group: '—', stage: '半决赛',
         home: { flag: '❓', name: '待定' }, away: { flag: '❓', name: '待定' },
         stadium: 'SoFi体育场', city: '洛杉矶', capacity: '70,240',
-        tz: 'UTC-7', timeLocal: '7/16 20:00', status: 'upcoming', note: '🌟 半决赛'
+        tz: 'UTC-7', timeLocal: '7/15 12:00', status: 'upcoming', note: '🌟 半决赛！CCTV5直播'
     },
+
+    // ════ 决赛 ════
     {
-        id: 95, dateBJ: '7月19日 (周六)', timeBJ: '08:00', group: '—', stage: '三四名决赛',
+        id: 95, dateBJ: '7月19日 (周日)', timeBJ: '05:00', group: '—', stage: '三四名决赛',
         home: { flag: '❓', name: '待定' }, away: { flag: '❓', name: '待定' },
         stadium: 'Hard Rock体育场', city: '迈阿密', capacity: '64,767',
-        tz: 'UTC-4', timeLocal: '7/18 20:00', status: 'upcoming', note: '🥉 季军战'
+        tz: 'UTC-4', timeLocal: '7/18 17:00', status: 'upcoming', note: '🥉 季军战！CCTV5直播'
     },
     {
-        id: 99, dateBJ: '7月20日 (周日)', timeBJ: '04:00', group: '—', stage: '🏆 决赛',
+        id: 99, dateBJ: '7月20日 (周一)', timeBJ: '03:00', group: '—', stage: '🏆 决赛',
         home: { flag: '❓', name: '待定' }, away: { flag: '❓', name: '待定' },
         stadium: '大都会人寿体育场', city: '新泽西', capacity: '82,500',
-        tz: 'UTC-4', timeLocal: '7/19 16:00', status: 'upcoming', note: '👑 世界之巅！第23届世界杯冠军诞生'
+        tz: 'UTC-4', timeLocal: '7/19 15:00', status: 'upcoming', note: '👑 世界之巅！CCTV5全程直播'
     },
 ];
 
@@ -568,7 +518,7 @@ const STADIUMS = [
     { name: '联邦快递体育场', city: '🇺🇸 马里兰 · 兰多弗', cap: '62,000', icon: '🏟️', note: '' },
 ];
 
-// ====== 焦点球队 ======
+// ====== 焦点球队 (FIFA排名 + 真实参赛队) ======
 const FOCUS_TEAMS = [
     { flag: '🇦🇷', name: '阿根廷', fifa: 'FIFA #1', star: true },
     { flag: '🇧🇷', name: '巴西', fifa: 'FIFA #2', star: true },
@@ -576,18 +526,20 @@ const FOCUS_TEAMS = [
     { flag: '🇪🇸', name: '西班牙', fifa: 'FIFA #4', star: true },
     { flag: '🇵🇹', name: '葡萄牙', fifa: 'FIFA #5', star: true },
     { flag: '🏴󠁧󠁢󠁥󠁮󠁧󠁿', name: '英格兰', fifa: 'FIFA #6', star: true },
+    { flag: '🇳🇱', name: '荷兰', fifa: 'FIFA #7', star: true },
+    { flag: '🇧🇪', name: '比利时', fifa: 'FIFA #8', star: true },
     { flag: '🇩🇪', name: '德国', fifa: 'FIFA #10', star: true },
     { flag: '🇲🇽', name: '墨西哥', fifa: '东道主', star: false },
     { flag: '🇺🇸', name: '美国', fifa: '东道主', star: false },
     { flag: '🇨🇦', name: '加拿大', fifa: '东道主', star: false },
-    { flag: '🇮🇹', name: '意大利', fifa: 'FIFA #9', star: true },
-    { flag: '🇳🇱', name: '荷兰', fifa: 'FIFA #7', star: false },
-    { flag: '🇧🇪', name: '比利时', fifa: 'FIFA #8', star: false },
-    { flag: '🇨🇴', name: '哥伦比亚', fifa: 'FIFA #11', star: false },
-    { flag: '🇺🇾', name: '乌拉圭', fifa: 'FIFA #13', star: false },
-    { flag: '🇭🇷', name: '克罗地亚', fifa: 'FIFA #16', star: false },
     { flag: '🇯🇵', name: '日本', fifa: 'FIFA #15', star: false },
     { flag: '🇰🇷', name: '韩国', fifa: 'FIFA #22', star: false },
+    { flag: '🇭🇷', name: '克罗地亚', fifa: 'FIFA #16', star: false },
+    { flag: '🇺🇾', name: '乌拉圭', fifa: 'FIFA #13', star: false },
+    { flag: '🇨🇴', name: '哥伦比亚', fifa: 'FIFA #11', star: false },
+    { flag: '🇲🇦', name: '摩洛哥', fifa: 'FIFA #12', star: false },
+    { flag: '🇳🇴', name: '挪威', fifa: '哈兰德', star: false },
+    { flag: '🇪🇬', name: '埃及', fifa: '萨拉赫', star: false },
 ];
 
 // ==========================================
@@ -640,7 +592,7 @@ function renderSchedule() {
                         ${m.note ? `<p style="color:var(--gold);font-size:0.8rem;margin-top:4px;">${m.note}</p>` : ''}
                         <div class="card-actions">
                             <span class="click-hint">点击查看详情 ›</span>
-                            <a href="https://tv.cctv.com/live/cctv5/" target="_blank" class="cctv5-btn" onclick="event.stopPropagation()" title="CCTV5 体育频道直播">📺 CCTV5 直播</a>
+                            <a href="https://tv.cctv.com/live/cctv5/index.shtml" target="_blank" class="cctv5-btn" onclick="event.stopPropagation()" title="CCTV5 体育频道直播">📺 CCTV5 直播</a>
                         </div>
                     </div>
                 </div>
@@ -739,7 +691,7 @@ function openMatchDetail(matchId) {
         </div>
         <div class="modal-status ${statusClass}">${statusText}</div>
         ${match.note ? `<p style="text-align:center;color:var(--gold);margin-top:12px;font-size:0.9rem;">${match.note}</p>` : ''}
-        <a href="https://tv.cctv.com/live/cctv5/" target="_blank" class="modal-cctv5-btn">
+        <a href="https://tv.cctv.com/live/cctv5/index.shtml" target="_blank" class="modal-cctv5-btn">
             📺 在 CCTV5 观看直播 →
         </a>
     `;
