@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>李东升专属 · 2026 FIFA世界杯</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ====== 导航栏 ====== -->
+<nav class="navbar" id="navbar">
+    <div class="nav-container">
+        <a href="#home" class="nav-logo">
+            <span class="logo-icon">⚽</span>
+            <span>李东升 · 2026世界杯</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="#home" class="active">首页</a></li>
+            <li><a href="#groups">小组赛</a></li>
+            <li><a href="#schedule">赛程</a></li>
+            <li><a href="#stadiums">球场</a></li>
+            <li><a href="#teams">球队</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">☰</div>
+    </div>
+</nav>
+
+<!-- ====== Hero 区域 ====== -->
+<section class="hero" id="home">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <div class="hero-badge">🏆 第23届 FIFA 世界杯</div>
+        <div class="hero-logo-badge">
+            <span class="logo-icon-left">⚽</span>
+            <span class="logo-text">李东升</span>
+            <span class="logo-sub">· 专属世界杯 ·</span>
+            <span class="logo-icon-right">🏆</span>
+        </div>
+        <h1 class="hero-title">
+            <span class="title-line">2026 世界杯</span>
+            <span class="title-sub">美国 · 加拿大 · 墨西哥</span>
+        </h1>
+        <p class="hero-date">2026年6月11日 — 7月19日</p>
+        <div class="hero-countdown" id="countdown">
+            <div class="countdown-item"><span class="count-num" id="cd-days">00</span><span class="count-label">天</span></div>
+            <div class="countdown-item"><span class="count-num" id="cd-hours">00</span><span class="count-label">时</span></div>
+            <div class="countdown-item"><span class="count-num" id="cd-mins">00</span><span class="count-label">分</span></div>
+            <div class="countdown-item"><span class="count-num" id="cd-secs">00</span><span class="count-label">秒</span></div>
+        </div>
+        <p class="hero-status" id="hero-status">世界杯正在进行中！🔥</p>
+    </div>
+    <div class="hero-scroll">
+        <span>向下滚动</span>
+        <div class="scroll-arrow">↓</div>
+    </div>
+</section>
+
+<!-- ====== 赛事亮点 ====== -->
+<section class="highlights">
+    <div class="container">
+        <div class="highlight-cards">
+            <div class="hl-card">
+                <div class="hl-icon">🌎</div>
+                <h3>三国联办</h3>
+                <p>史上首次由三个国家联合主办世界杯</p>
+            </div>
+            <div class="hl-card">
+                <div class="hl-icon">🏟️</div>
+                <h3>16座球场</h3>
+                <p>横跨美国、加拿大、墨西哥的16座顶级体育场</p>
+            </div>
+            <div class="hl-card">
+                <div class="hl-icon">👥</div>
+                <h3>48支球队</h3>
+                <p>历史首次扩军至48支参赛队伍</p>
+            </div>
+            <div class="hl-card">
+                <div class="hl-icon">⚽</div>
+                <h3>104场比赛</h3>
+                <p>从小组赛到决赛，共104场精彩对决</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ====== 小组赛 ====== -->
+<section class="groups-section" id="groups">
+    <div class="container">
+        <h2 class="section-title">小组赛分组</h2>
+        <p class="section-subtitle">48支球队分为12个小组，每组4队</p>
+        <div class="groups-grid" id="groups-grid">
+            <!-- JS动态生成 -->
+        </div>
+    </div>
+</section>
+
+<!-- ====== 赛程表 ====== -->
+<section class="schedule-section" id="schedule">
+    <div class="container">
+        <h2 class="section-title">完整赛程</h2>
+        <p class="section-subtitle">全部时间为北京时间 · 点击比赛查看详情 · 一键跳转CCTV5直播</p>
+        <div class="schedule-timeline" id="schedule-timeline">
+            <!-- JS动态生成 -->
+        </div>
+    </div>
+</section>
+
+<!-- ====== 举办球场 ====== -->
+<section class="stadiums-section" id="stadiums">
+    <div class="container">
+        <h2 class="section-title">举办球场</h2>
+        <p class="section-subtitle">16座世界级体育场，见证历史时刻</p>
+        <div class="stadiums-grid" id="stadiums-grid">
+            <!-- JS动态生成 -->
+        </div>
+    </div>
+</section>
+
+<!-- ====== 参赛球队 ====== -->
+<section class="teams-section" id="teams">
+    <div class="container">
+        <h2 class="section-title">焦点球队</h2>
+        <p class="section-subtitle">夺冠热门与值得关注的队伍</p>
+        <div class="teams-grid" id="teams-grid">
+            <!-- JS动态生成 -->
+        </div>
+    </div>
+</section>
+
+<!-- ====== 底部 ====== -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <span class="logo-icon">⚽</span>
+                <span>李东升 · 2026世界杯专属</span>
+            </div>
+            <p class="footer-text">
+                2026年国际足联世界杯 · 美国 / 加拿大 / 墨西哥联合主办<br>
+                本网站仅供信息展示，数据来源于公开信息，以 FIFA 官方为准
+            </p>
+        </div>
+    </div>
+</footer>
+
+<!-- ====== 比赛详情弹窗 ====== -->
+<div class="modal-overlay" id="modal-overlay">
+    <div class="modal" id="match-modal">
+        <button class="modal-close" id="modal-close">&times;</button>
+        <div class="modal-content" id="modal-content">
+            <!-- JS动态填充 -->
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
