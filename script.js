@@ -80,6 +80,18 @@ const GROUPS = [
     ]}
 ];
 
+// ====== CCTV比赛链接映射 (已知ID，后续陆续补全) ======
+const CCTV_MATCH_IDS = {
+    1:  '22920296', // 墨西哥 vs 南非 (揭幕战)
+    2:  '23510405', // 韩国 vs 捷克
+    // 更多ID待央视更新后补充
+};
+function getCCTVUrl(matchId) {
+    const cctvId = CCTV_MATCH_IDS[matchId];
+    if (cctvId) return `https://worldcup.cctv.com/2026/match/${cctvId}/index.shtml`;
+    return 'https://worldcup.cctv.com/2026/'; // 未匹配时跳转世界杯首页
+}
+
 // ====== 完整赛程 — 104场 (北京时间) ======
 // match: id, dateBJ, timeBJ, group, stage, home/away, stadium, city, capacity, status, note, timeLocal
 const M = (id,dateBJ,timeBJ,group,stage,hf,hn,af,an,stadium,city,cap,status,note,timeLocal) => ({
@@ -332,7 +344,7 @@ function renderSchedule() {
                         ${m.note?`<p style="color:var(--gold);font-size:0.8rem;margin-top:2px;">${m.note}</p>`:''}
                         <div class="card-actions">
                             <span class="click-hint">点击查看详情 ›</span>
-                            <a href="https://tv.cctv.com/live/cctv5/index.shtml" target="_blank" class="cctv5-btn" onclick="event.stopPropagation()">📺 CCTV5 直播</a>
+                            <a href="${getCCTVUrl(m.id)}" target="_blank" class="cctv5-btn" onclick="event.stopPropagation()">📺 央视直播</a>
                         </div>
                     </div>
                 </div>`;
@@ -397,7 +409,7 @@ function openMatchDetail(matchId) {
         </div>
         <div class="modal-status ${sc}">${st}</div>
         ${match.note?`<p style="text-align:center;color:var(--gold);margin-top:8px;">${match.note}</p>`:''}
-        <a href="https://tv.cctv.com/live/cctv5/index.shtml" target="_blank" class="modal-cctv5-btn">📺 在 CCTV5 观看直播 →</a>
+        <a href="${getCCTVUrl(match.id)}" target="_blank" class="modal-cctv5-btn">📺 在央视观看本场比赛 →</a>
     `;
     overlay.classList.add('show');
     document.body.style.overflow = 'hidden';
