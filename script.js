@@ -80,16 +80,15 @@ const GROUPS = [
     ]}
 ];
 
-// ====== CCTV比赛链接映射 (已知ID，后续陆续补全) ======
-const CCTV_MATCH_IDS = {
-    1:  '22920296', // 墨西哥 vs 南非 (揭幕战)
-    2:  '23510405', // 韩国 vs 捷克
-    // 更多ID待央视更新后补充
+// ====== CCTV比赛链接映射 ======
+// 央视世界杯比赛ID从22920296开始排列
+// 已知例外：韩国vs捷克=23510405
+const CCTV_EXCEPTIONS = {
+    2: 23510405, // 韩国 vs 捷克
 };
 function getCCTVUrl(matchId) {
-    const cctvId = CCTV_MATCH_IDS[matchId];
-    if (cctvId) return `https://worldcup.cctv.com/2026/match/${cctvId}/index.shtml`;
-    return 'https://worldcup.cctv.com/2026/'; // 未匹配时跳转世界杯首页
+    const cctvId = CCTV_EXCEPTIONS[matchId] || (22920296 + matchId - 1);
+    return `https://worldcup.cctv.com/2026/match/${cctvId}/index.shtml`;
 }
 
 // ====== 完整赛程 — 104场 (北京时间) ======
